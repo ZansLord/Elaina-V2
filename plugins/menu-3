@@ -12,13 +12,13 @@ const defaultMenu = {
 │Hallo, *%name!* 
 │${ucapan()}
 │
-│◙ *Tanggal:* %week, %date
-│◙ *Waktu:* %time
-│◙ *Bot Online:* %uptime (%muptime)
-│◙ *Pengguna:* %totalreg Orang
-│◙ *Lib:* Baileys-Md
-│◙ *Language:* Javascript,Ts-Node
-│◙ *Fitur:* %totalfeatures command
+│✎ *Tanggal:* %week, %date
+│✎ *Waktu:* %time
+│✎ *Bot Online:* %uptime (%muptime)
+│✎ *Pengguna:* %totalreg Orang
+│✎ *Lib:* Baileys-Md
+│✎ *Language:* Javascript,Ts-Node
+│✎ *Fitur:* %totalfeatures command
 ╰──────────━⃝┅⃝━────────┘
 
 「▰▰▰▱▱▱▱▱▱▱」Loading...
