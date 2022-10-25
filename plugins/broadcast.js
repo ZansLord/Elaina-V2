@@ -3,9 +3,9 @@ let handler  = async (m, { conn, text }) => {
   let chats = Object.keys(await conn.chats)
   conn.reply(m.chat, `_Mengirim pesan broadcast ke ${chats.length} chat_`, m)
   for (let id of chats) {
-       let bcbg = 'https://telegra.ph/file/b2ae8a0e437e4252d5124.png'
+       let bcbg = 'https://telegra.ph/file/5129419b702dd99c78234.jpg'
        await delay(1500)
-       await conn.send2Button(id, text.trim(), wm, 'Menu', '.menu', 'Owner', '.owner', fakes, { contextInfo: {
+       await conn.send2Button(id, text.trim(), wm, 'Tampilan menu ✎', '.menu', 'Contact Owner ✎', '.owner', fakes, { contextInfo: {
       externalAdReply :{
       showAdAttribution: true,
       }}})
