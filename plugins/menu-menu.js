@@ -61,13 +61,13 @@ await conn.send2ButtonDoc(m.chat, cap, botdate, '𝐋𝐢𝐬𝐭𝐌𝐞𝐧�
 			contextInfo: {
 				forwardingScore: fsizedoc,
 				externalAdReply: {
-                    body: '© 𝐒𝐤𝐲𝐁𝗼𝐭',
+                    body: '© Elaina',
     containsAutoReply: true,
     mediaType: 1,
     mediaUrl: hwaifu.getRandom(), 
     renderLargerThumbnail: true,
     showAdAttribution: true,
-    sourceId: '© 𝐒𝐤𝐲𝐁𝗼𝐭',
+    sourceId: '© Elaina',
     sourceType: 'PDF',
     previewType: 'PDF',
     sourceUrl: wame,

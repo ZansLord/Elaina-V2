@@ -327,7 +327,7 @@ ${clockStringP(usrs.premiumTime - new Date())}` : ''}
 `
 const listMessage = {
   text: tek,
-  footer: '赤 𝐒𝐤𝐲𝐁𝗼𝐭-𝐌𝐝 × 𝐀𝐫𝐢𝐟𝐳𝐲𝐧',
+  footer: '赤 Elaina × ZansLord',
   mentions: await conn.parseMention(tek),
   title: ``,
   buttonText: `Click Here ᐢ..ᐢ`,
@@ -540,7 +540,7 @@ const listMessage = {
                 {
                     urlButton: {
                         displayText: `${namebot}`,
-                        url: 'https://arifzyn.blogspot.com/'
+                        url: 'https://zanslord.github.io'
                     }
                 },
                 {

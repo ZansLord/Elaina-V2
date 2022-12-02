@@ -56,7 +56,7 @@ Hallo *%name!* %ucapan
 ◉ *Fitur:* %totalfeatures command
 
 %readmore
-*Support me:* _https://s.id/Cerdasin62_
+*Support me:* _https://github.com/ZansLord_
 *Note:*
 _Jika Respon Tidak Muncul Kemungkinan Terjadi Error_
 `.trimStart(),
@@ -199,7 +199,7 @@ let handler = async (m, { conn, groupMetadata, usedPrefix: _p, __dirname }) => {
                             itemCount : 9999999999999,
                             status: 1,
                             surface : 1,
-                            message: 'Arifzyn',
+                            message: 'ZansLord',
                             orderTitle: 'MENU',
                             thumbnail: await (await fetch('https://telegra.ph/file/3911d7aaaa8733314f70f.png')).buffer(),
                             sellerJid: '0@s.whatsapp.net'
@@ -212,11 +212,11 @@ await conn.send3ButtonImg(m.chat, await (await fetch(pepe)).buffer(), dashmenu, 
       contextInfo: { //forwardingScore: 99999, isForwarded: true,  
           externalAdReply: {  showAdAttribution: true, 
               title: 'Bot Wahatsapp multi device',
-              body: '© khurushi-Md', 
-              description: 'Made With ❤️ Riellxzy', 
+              body: '© Elaina-Chan', 
+              description: 'Made With ❤️ Abdul Masuk Surga', 
               mediaType: 2,  
             thumbnail: await (await fetch(pepe)).buffer(), 
-           mediaUrl: `https://youtu.be/ZH64Xapsj6M` 
+           mediaUrl: `https://youtu.be/yhjuDX0jBwo` 
           }  
        }  
       })

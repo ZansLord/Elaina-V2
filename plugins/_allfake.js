@@ -1,26 +1,21 @@
+//By Papah-Chan
+
 import fs from 'fs'
 import fetch from 'node-fetch'
 import moment from 'moment-timezone'
 
 let handler = m => m
 handler.all = async function (m) {
+    let sapa = ['Hai', 'Ohayo', 'Kyaa', 'Halo', 'Nyann'].getRandom()
     let name = await conn.getName(m.sender) 
-    let totalreg = Object.keys(global.db.data.users).length
-	let pp
+	let pp = 'https://i0.wp.com/www.gambarunik.id/wp-content/uploads/2019/06/Top-Gambar-Foto-Profil-Kosong-Lucu-Tergokil-.jpg'
 	try {
 		pp = await this.profilePictureUrl(m.sender, 'image')
 	} catch (e) {
-	pp = hwaifu.getRandom()
 	} finally {
 		
-        // Doc
-        let pdoc = ["application/vnd.openxmlformats-officedocument.presentationml.presentation","application/vnd.openxmlformats-officedocument.spreadsheetml.sheet","application/vnd.openxmlformats-officedocument.wordprocessingml.document","application/vnd.ms-excel","application/msword","application/pdf","text/rtf"]
-		global.doc = pdoc.getRandom()
-       global.fetch = import('node-fetch')
-		
-		// Fake Random
-        let pft = ["fpayment","ftroli","fkontak","fvn","fvid","ftextt","fliveLoc","fliveLoc2","ftoko","fdocs","fgclink","fgif"]
-		global.fakes = pft.getRandom()
+        //global.bg = await (await fetch(img)).buffer()
+		global.doc = pickRandom(["application/vnd.ms-excel", "application/vnd.openxmlformats-officedocument.presentationml.presentation", "application/msword", "application/pdf"])
 		
 		// Module 
 		global.fetch = import('node-fetch')
@@ -30,8 +25,8 @@ handler.all = async function (m) {
         
 		// Ini untuk command crator/owner
 		global.kontak2 = [
-         [owner[0], await this.getName(owner[0] + '@s.whatsapp.net'), 'ᴅᴇᴠᴇʟᴏᴩᴇʀ ʙᴏᴛ', 'aldashakila23@mail.com', true],
-         [owner[1], await this.getName(owner[1] + '@s.whatsapp.net'), 'ᴅᴇᴠᴇʟᴏᴩᴇʀ ʙᴏᴛ', 'aldashakila23@mail.com', true], // Kalo mau di tambah tinggal copy 1baris ini di tempel di bawahnya trs di edit dikit!
+         [owner[0], await conn.getName(owner[0] + '6281361281833@s.whatsapp.net'), 'ᴅᴇᴠᴇʟᴏᴩᴇʀ ʙᴏᴛ', 'fahriadison12@gmail.com', true],
+         [owner[1], await conn.getName(owner[1] + '@s.whatsapp.net'), 'ᴅᴇᴠᴇʟᴏᴩᴇʀ ʙᴏᴛ', 'fahriadison12@gmail.com', true], // Kalo mau di tambah tinggal copy 1baris ini di tempel di bawahnya trs di edit dikit!
         ]
         
 		// ucapan ini mah
@@ -43,107 +38,85 @@ handler.all = async function (m) {
 		// externalAdReply atau text with thumbnail. gatau bahasa Inggris? coba translate!
 		global.adReply = {
 			contextInfo: {
-				forwardingScore: fsizedoc,
+				forwardingScore: 9999,
 				//isForwarded: true, // ini biar ada tulisannya diteruskan berkali-kali, jika ingin di hilangkan ganti true menjadi false
 				externalAdReply: { // Bagian ini sesuka kalian berkreasi :'v
                     showAdAttribution: true,
-					title: bottime,
-					body: '𝐒𝐢𝗺𝐩𝐥𝐞 𝐁𝗼t 𝐖𝐡𝐚𝐭𝐬𝐀𝐩𝐩 𝐁𝐲 𝐀𝐫𝐢𝐟𝐳𝐲𝐧',
+					title: global.ucapan,
+					body: '👋 ' + sapa + " Kak :> " + name,
 					mediaUrl: sgc,
-					description: botdate,
+					description: 'simple bot esm',
 					previewType: "PHOTO",
 					thumbnail: await (await fetch(pp)).buffer(),
-					sourceUrl: sgh			
+					sourceUrl: "https://github.com/FahriAdison",					
 				}
 			}
 		}
 		global.fakeig = {
          contextInfo: { externalAdReply: { showAdAttribution: true,
-            mediaUrl: sig,
+            mediaUrl: "https://Instagram.com/bot_whangsaf",
             mediaType: "VIDEO",
-            description: "Follow: " + sig,
-            title: wm,
-            body: botdate,
-            thumbnailUrl: await (await fetch(pp)).buffer(),
+            description: "https://Instagram.com/bot_whangsaf", 
+            title: 'Simple Bot Esm',
+            body: wm,
+            thumbnailUrl: pp,
             sourceUrl: sgc
     }
     } }
-    // Fake 🤥
-		global.fpayment = {
-  "key": {
-    "remoteJid": "0@s.whatsapp.net",
-    "fromMe": false,
-    "id": "BAE595C600522C9C",
-    "participant": "0@s.whatsapp.net"
-  },
-  "message": {
-    "requestPaymentMessage": {
-      "currencyCodeIso4217": "USD",
-      "amount1000": fsizedoc,
-      "requestFrom": "0@s.whatsapp.net",
-      "noteMessage": {
-        "extendedTextMessage": {
-          "text": "\nHay Kak :> 👋 \n"
-        }
-      },
-      "expiryTimestamp": fsizedoc,
-      "amount": {
-        "value": fsizedoc,
-        "offset": fsizedoc,
-        "currencyCode": "USD"
-      }
-    }
-  }
-}
 		// Fake 🤥
-		global.ftroli = { key: {participant : '0@s.whatsapp.net'}, message: { orderMessage: { itemCount: fsizedoc, status: 1, surface: 1, message: botdate, orderTitle: wm, sellerJid: '0@s.whatsapp.net' } } }
-		global.fkontak = { key: {participant : '0@s.whatsapp.net'}, message: { 'contactMessage': { 'displayName': wm, 'vcard': `BEGIN:VCARD\nVERSION:3.0\nN:XL;${wm},;;;\nFN:${wm},\nitem1.TEL;waid=${m.sender.split('@')[0]}:${m.sender.split('@')[0]}\nitem1.X-ABLabell:Ponsel\nEND:VCARD`, 'jpegThumbnail': fs.readFileSync('./thumbnail.jpg'), thumbnail: fs.readFileSync('./thumbnail.jpg'),sendEphemeral: true}}}
-		global.fkon = { key: {participant: `0@s.whatsapp.net`, ...(m.chat ? { remoteJid: `status@broadcast` } : {}) }, message: { 'contactMessage': { 'displayName': wm, 'vcard': `BEGIN:VCARD\nVERSION:3.0\nN:XL;${wm},;;;\nFN:${wm},\nitem1.TEL;waid=${m.sender.split('@')[0]}:${m.sender.split('@')[0]}\nitem1.X-ABLabell:Ponsel\nEND:VCARD`, 'jpegThumbnail': fs.readFileSync('./src/logo.jpg'), thumbnail: fs.readFileSync('./src/logo.jpg'),sendEphemeral: true}}}
+		global.ftroli = { key: { remoteJid: 'status@broadcast', participant: '0@s.whatsapp.net' }, message: { orderMessage: { itemCount: 9999999999999999999999999999999999999999999999999999999, status: 1, surface: 1, message: wm, orderTitle: wm, sellerJid: '0@s.whatsapp.net' } } }
+		global.fkontak = { key: { fromMe: false, participant: `0@s.whatsapp.net`, ...(m.chat ? { remoteJid: `status@broadcast` } : {}) }, message: { 'contactMessage': { 'displayName': wm, 'vcard': `BEGIN:VCARD\nVERSION:3.0\nN:XL;${wm},;;;\nFN:${wm},\nitem1.TEL;waid=${m.sender.split('@')[0]}:${m.sender.split('@')[0]}\nitem1.X-ABLabell:Ponsel\nEND:VCARD`, 'jpegThumbnail': fs.readFileSync('./thumbnail.jpg'), thumbnail: fs.readFileSync('./thumbnail.jpg'),sendEphemeral: true}}}
         global.fvn = {
-            key: {
-                 participant : '0@s.whatsapp.net'},
+            key: { 
+                 fromMe: false,
+                 participant: `0@s.whatsapp.net`, ...(m.chat ? 
+            { remoteJid: "6282127487538-1625305606@g.us" } : {}) 
+                       },
             message: { 
                "audioMessage": {
                         "mimetype":"audio/ogg; codecs=opus",
-                        "seconds": fsizedoc,
+                        "seconds": "999999999999",
                         "ptt": "true"
                                }
                              } 
                             }
-                            global.fvid = {
-            key: {
-                 participant : '0@s.whatsapp.net'},
-            message: { "videoMessage": { "title":wm, "h": `Hmm`,'seconds': fsizedoc, 'caption': bottime, 'jpegThumbnail': fs.readFileSync('./thumbnail.jpg')}}
-                            }
-                            
                
                 global.ftextt = {
-            key: {
-                 participant : '0@s.whatsapp.net'},
+            key: { 
+                 fromMe: false,
+                 participant: `0@s.whatsapp.net`, ...(m.chat ? 
+            { remoteJid: "6282127487538-1625305606@g.us" } : {}) 
+                       },
             message: { 
                "extendedTextMessage": {
                         "text":wm,
-                        "title": bottime,
+                        "title": wm,
                         'jpegThumbnail': fs.readFileSync('./thumbnail.jpg')
                                }
                              } 
                             }
                
                   global.fliveLoc = {
-            key: {
-            participant : '0@s.whatsapp.net'},
-            message: { "liveLocationMessage": { "caption": wm,"h": `${bottime}`, 'jpegThumbnail': fs.readFileSync('./thumbnail.jpg')}}
+            key:
+            { fromMe: false,
+            participant: `0@s.whatsapp.net`, ...(m.chat  ? 
+            { remoteJid: "status@broadcast" } : {}) },
+            message: { "liveLocationMessage": { "caption":"by : WH MODS DEV","h": `${wm}`, 'jpegThumbnail': fs.readFileSync('./thumbnail.jpg')}}
            }
                
                   global.fliveLoc2 = {
-            key: {
-            participant : '0@s.whatsapp.net'},
-            message: { "liveLocationMessage": { "title": wm,"h": bottime, 'jpegThumbnail': fs.readFileSync('./thumbnail.jpg')}}
+            key:
+            { fromMe: false,
+            participant: `0@s.whatsapp.net`, ...(m.chat ? 
+            { remoteJid: "status@broadcast" } : {}) },
+            message: { "liveLocationMessage": { "title": "WH MODS DEV","h": wm, 'jpegThumbnail': fs.readFileSync('./thumbnail.jpg')}}
            }
                
                    global.ftoko = {
        key: {
-                   participant : '0@s.whatsapp.net'},
+                   fromMe: false,
+                   participant: `0@s.whatsapp.net`, ...(m.chat ? { remoteJid: "6282127487538@s.whatsapp.net" } : {})
+               },
                message: {
                    "productMessage": {
                        "product": {
@@ -152,9 +125,9 @@ handler.all = async function (m) {
                                "jpegThumbnail": fs.readFileSync('./thumbnail.jpg') //Gambarnye
                            },
                            "title": wm, //Kasih namalu 
-                           "description": bottime, 
-                           "currencyCode": "IDR",
-                           "priceAmount1000": fsizedoc,
+                           "description": "Simple Bot Esm", 
+                           "currencyCode": "USD",
+                           "priceAmount1000": "20000000",
                            "retailerId": "Ghost",
                            "productImageCount": 1
                        },
@@ -165,7 +138,8 @@ handler.all = async function (m) {
                
                      global.fdocs = {
            key : {
-                  participant : '0@s.whatsapp.net'},
+                  participant : '0@s.whatsapp.net'
+                               },
               message: {
                            documentMessage: {
                            title: wm, 
@@ -175,29 +149,35 @@ handler.all = async function (m) {
                              }
                
                     global.fgclink = {
-           key: {
-               participant : '0@s.whatsapp.net'},
-           message: {
-               groupInviteMessage: {
-                   groupJid: "17608914335-1625305606@g.us",
-                   inviteCode: null,
-                   groupName: wm, 
-                   caption: bottime, 
-                   jpegThumbnail: fs.readFileSync('./thumbnail.jpg')
+           "key": {
+               "fromMe": false,
+               "participant": "0@s.whatsapp.net",
+               "remoteJid": "0@s.whatsapp.net"
+           },
+           "message": {
+               "groupInviteMessage": {
+                   "groupJid": "6282127487538-1625305606@g.us",
+                   "inviteCode": "null",
+                   "groupName": "Kawan WH MODS DEV", 
+                   "caption": wm, 
+                   'jpegThumbnail': fs.readFileSync('./thumbnail.jpg')
                }
            }
        }
        
                     global.fgif = {
-            key: {
-                 participant : '0@s.whatsapp.net'},
+            key: { 
+                 fromMe: false,
+                 participant: `0@s.whatsapp.net`, ...(m.chat ? 
+            { remoteJid: "6282127487538-1625305606@g.us" } : {}) 
+                       },
             message: { 
                         "videoMessage": { 
                         "title": wm,
                         "h": `Hmm`,
-                        'seconds': fsizedoc, 
+                        'seconds': '999999999', 
                         'gifPlayback': 'true', 
-                        'caption': bottime,
+                        'caption': wm,
                         'jpegThumbnail': fs.readFileSync('./thumbnail.jpg')
                                }
                               }
@@ -210,9 +190,6 @@ export default handler
 function ucapan() {
     const time = moment.tz('Asia/Jakarta').format('HH')
     let res = "Selamat malam 🌙"
-    if (time >= 1) {
-        res = "Selamat Pagi 🗿"
-    }
     if (time >= 4) {
         res = "Selamat pagi 🌄"
     }
@@ -224,9 +201,6 @@ function ucapan() {
     }
     if (time >= 18) {
         res = "Selamat malam 🌙"
-    }
-    if (time >= 24) {
-        res = "Selamat Begadang 🌌"
     }
     return res
 }

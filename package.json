@@ -1,7 +1,7 @@
 {
-    "name": "SkyBot",
-    "version": "1.0.01",
-    "description": "©Arifzyn-team",
+    "name": "Elaina",
+    "version": "2.0.01",
+    "description": "Extream-Crew",
     "main": "index.js",
     "type": "module",
     "directories": {
@@ -26,9 +26,9 @@
         "MD",
         "baileys-md"
     ],
-    "homepage": "https://github.com/Rizxyu",
+    "homepage": "https://github.com/ZansLord",
     "author": {
-        "name": "Rizxyu"
+        "name": "ZansLord"
     },
     "repository": {
         "type": "git",

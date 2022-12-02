@@ -9,7 +9,7 @@ let info = `
 █▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄█
 
 SILAHKAN PILIH SALAH 1 MENU 
-DI BAWAH!!
+DI BAWAH(⁠٥⁠↼⁠_⁠↼⁠)
 `
 const sections = [
    {
